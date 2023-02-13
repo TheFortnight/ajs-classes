@@ -1,0 +1,23 @@
+{
+  "name": "ajs-classes",
+  "version": "1.0.0",
+  "description": "homework",
+  "main": "index.js",
+  "scripts": {
+    "try": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TheFortnight/ajs-classes.git"
+  },
+  "keywords": [
+    "classes"
+  ],
+  "author": "TheFortnight",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TheFortnight/ajs-classes/issues"
+  },
+  "homepage": "https://github.com/TheFortnight/ajs-classes#readme"
+}
