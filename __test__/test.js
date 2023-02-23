@@ -12,9 +12,9 @@ test('type error', () => {
 })
 
 test('create character', () => {
-    let bowerman = new Bowerman('Al', 'bowerman');
+    let bowerman = new Bowerman('Al', 'Bowerman');
     let correct = {
-        attack: 25, defence: 25, health: 25, level: 1, name: 'Al', type: 'Bowerman'
+        attack: 25, defence: 25, health: 100, level: 1, name: 'Al', type: 'Bowerman'
     };
     expect(bowerman).toEqual(correct);
 })
