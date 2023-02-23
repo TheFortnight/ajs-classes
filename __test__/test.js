@@ -1,22 +1,40 @@
 import Bowerman from "../Bowerman";
+import Character from "../Character";
 
-const bowerman = new Bowerman('al', 'bowerman');
-
-test('bowerman', ()=>{    
-    expect(bowerman.health).toBe(100);
-    //console.log(bowerman.health);
+test('name error', () => {
+    
+    expect(() => new Character('A', "Bowerman")).toThrow(new Error('Name length should be 2-10 symbols!'));
 })
 
-test('damage', ()=>{
+test('type error', () => {
+    
+    expect(() => new Character('Al', "Bowermann")).toThrow(new Error('Wrong character type entered!'));
+})
+
+test('create character', () => {
+    let bowerman = new Bowerman('Al', 'bowerman');
+    let correct = {
+        attack: 25, defence: 25, health: 25, level: 1, name: 'Al', type: 'Bowerman'
+    };
+    expect(bowerman).toEqual(correct);
+})
+
+test('damage', () => {
+    const bowerman = new Bowerman('al', 'Bowerman');
     bowerman.damage(10);
     expect(bowerman.health).toBe(100 - 10 * (1 - 25 / 100));
 })
 
-test('levelUp', ()=>{
+test('levelUp', () => {
+    const bowerman = new Bowerman('al', 'Bowerman');
     bowerman.levelUp();
     expect(bowerman.level).toBe(2);
 })
 
-    //console.log(`after damage: ${bowerman.health}`);
+test('levelUp of the dead', () => {
+    const bowerman = new Bowerman('al', 'Bowerman');
+    bowerman.health = 0;
     
-    //console.log(`after levelup - health: ${bowerman.health}, level: ${bowerman.level}`);
+    expect(() => bowerman.levelUp()).toThrow(new Error('Нельзя повысить уровень умершего'));
+})
+
