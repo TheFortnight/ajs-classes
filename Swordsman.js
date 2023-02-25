@@ -1,4 +1,4 @@
-import Character from'./Character';
+import Character from './Character';
 
 export default class Swordsman extends Character {
   constructor(name, type) {
@@ -6,4 +6,4 @@ export default class Swordsman extends Character {
     this.attack = 40;
     this.defence = 10;
   }
-};
+}
